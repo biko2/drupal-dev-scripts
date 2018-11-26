@@ -8,7 +8,7 @@ Con posbilidad de elegit el perfil de instalación de drupal 8.
 Pasos:
 
 1. Abrir el terminal donde alojes tus proyectos y ejecutar:  
-   **sh -c "$(curl -sSL https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/docker-launcher.sh)"
+   **sh -c "$(curl -sSL https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/docker-launcher.sh)"**
    
 2. Escribir un nombre para tu proyecto. (ejem: biko2)
 
