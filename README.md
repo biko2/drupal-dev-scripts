@@ -1,9 +1,12 @@
 # Drupal DEV Scripts
 
-### Opción 1 (Local)
+### Opción 1 (Local) ###
 
-Asistente para montar un entorno drupal en local en pocos pasos.
+Asistente para montar un entorno drupal en local con docker y composer.
 Con posbilidad de elegit el perfil de instalación de drupal 8.
+
+Composer template for Drupal projects: https://github.com/drupal-composer/drupal-project    
+Docker image: https://github.com/biko2/drupal-dev
 
 Pasos:
 
