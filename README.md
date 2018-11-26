@@ -30,3 +30,10 @@ Pasos:
    usuario: NOMBREPROYECTO  
    Contraseña: NOMBREPROYECTO  
    Servidor: NOMBREPROYECTO_mysql_1  
+
+
+### Opción 2 (Pantheon) ###
+coming soon  
+
+### Opción 2 (Acquia) ###
+coming soon  
