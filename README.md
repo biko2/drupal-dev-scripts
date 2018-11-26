@@ -16,12 +16,12 @@ Pasos:
 
 4. Al terminar podras acceder a tu proyecto drupal.
 
-   Acceso web
+   * Acceso web
    Host: NOMBREPROYECTO.localhost
    Usuario: admin
    Contraseña: admin
    
-   Base de datos
+   * Base de datos
    Adminer -> adminer.localhost
    Nombre: NOMBREPROYECTO
    usuario: NOMBREPROYECTO
