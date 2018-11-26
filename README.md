@@ -35,5 +35,5 @@ Pasos:
 ### Opción 2 (Pantheon) ###
 coming soon  
 
-### Opción 2 (Acquia) ###
+### Opción 3 (Acquia) ###
 coming soon  
