@@ -22,7 +22,7 @@ Pasos:
    Contraseña: admin  
    
    **Base de datos**  
-   Adminer -> adminer.localhost  
+   **Adminer:** adminer.localhost  
    Nombre: NOMBREPROYECTO  
    usuario: NOMBREPROYECTO  
    Contraseña: NOMBREPROYECTO  
