@@ -19,7 +19,7 @@ Pasos:
 
 4. Al terminar podras acceder a tu proyecto drupal.
 
-   **Acceso web**  
+   **Acceso Drupal**  
    Host: NOMBREPROYECTO.localhost  
    Usuario: admin  
    Contraseña: admin  
