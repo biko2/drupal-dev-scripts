@@ -3,10 +3,6 @@
 # Crea un nuevo proyecto con drupal 8 y docker
 # Instalación de drupal 8 ( default user:admin / pass:admin)
 
-# sh -c "$(curl -sSL https://get.docker.com/)"
-# parar servicios apache mysql externos ????
-
-
 
 # Nombre del proyecto y base de datos
 echo "Introduce un nombre para el nuevo proyecto en minúsculas y sin espacios. (Ejemplo: biko2)"
@@ -16,7 +12,7 @@ read PROYECTO
 docker stop $(docker ps -a)
 
 # Detener conexiones virtuales no usadas
-docker network prune
+# docker network prune
 # docker rm $(docker ps -q -f status=exited)
 clear
 
@@ -114,13 +110,12 @@ COMMENT1
 # Permisos carpeta files
 docker-compose exec web chmod -R 777 /var/www/html/web/sites/default/files
 
-
 # Borramos caches drupal
 docker-compose exec web drush cr
+
+# Abrimos el navegador con nuestra web
+xdg-open http://$myhost
 
 # Entramos en la maquina docker
 docker-compose exec web bash
 
-
-# Abrimos el navegador con nuestra web
-xdg-open http://$myhost
