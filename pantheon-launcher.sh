@@ -18,10 +18,7 @@
 
 
 SITIO1=$1
-SITIO2=$2
-SITIO3=$3
-SITIO4=$4
 echo "1" $SITIO1 
-echo "2" $SITIO2 
-echo "3" $SITIO3 
-echo "4" $SITIO4
+
+
+git clone $SITIO1
