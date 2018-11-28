@@ -14,7 +14,12 @@
 # 12 - instalar dependencias tema y compilar
 # 13 - abrir terminal bash
 
+# sh -c "$(curl -sSL https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/pantheon-launcher.sh | bash -s -- OLA)"
+
 docker ps
 
-SITIO=$2
-echo $SITIO
+SITIO1=$1
+SITIO2=$2
+SITIO3=$3
+SITIO4=$4
+echo $SITIO1 $SITIO2 $SITIO3 $SITIO4

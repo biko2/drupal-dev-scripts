@@ -37,9 +37,5 @@ coming soon
 
 
 
-sh -c "$(curl -sSL https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/pantheon-launcher.sh | bash -s -- OLA)"
-
-
-
 ### Opción 3 (Acquia) ###
 coming soon  
