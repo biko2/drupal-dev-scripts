@@ -14,5 +14,7 @@
 # 12 - instalar dependencias tema y compilar
 # 13 - abrir terminal bash
 
-echo "llamada con argumento"
-echo $1 $2 $3 $4
+docker ps
+
+SITIO=$2
+echo $SITIO
