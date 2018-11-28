@@ -16,10 +16,12 @@
 
 # sh -c "$(curl -sSL https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/pantheon-launcher.sh | bash -s -- OLA)"
 
-docker ps
 
 SITIO1=$1
 SITIO2=$2
 SITIO3=$3
 SITIO4=$4
-echo $SITIO1 $SITIO2 $SITIO3 $SITIO4
+echo "1" $SITIO1 
+echo "2" $SITIO2 
+echo "3" $SITIO3 
+echo "4" $SITIO4
