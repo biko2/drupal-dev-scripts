@@ -15,5 +15,4 @@
 # 13 - abrir terminal bash
 
 echo "llamada con argumento"
-read arg1
-echo arg1
+echo $1 $2 $3 $4
