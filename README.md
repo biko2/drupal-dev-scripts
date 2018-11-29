@@ -17,7 +17,8 @@ Pasos:
 
 3. Elegir perfil instalación (Standard, Minimal o demo)
 
-4. Al terminar podras acceder a tu proyecto drupal desde NOMBREPROYECTO.localhost/user (admin/admin)
+4. Al terminar podras acceder a tu proyecto drupal desde:
+   **NOMBREPROYECTO.localhost/user** (admin/admin)
 
 
 
