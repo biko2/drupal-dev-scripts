@@ -19,17 +19,6 @@ Pasos:
 
 4. Al terminar podras acceder a tu proyecto drupal.
 
-   **Acceso Drupal**  
-   Host: NOMBREPROYECTO.localhost  
-   Usuario: admin  
-   Contraseña: admin  
-   
-   **Base de datos**  
-   **Adminer:** adminer.localhost  
-   Nombre: NOMBREPROYECTO  
-   usuario: NOMBREPROYECTO  
-   Contraseña: NOMBREPROYECTO  
-   Servidor: NOMBREPROYECTO_mysql_1  
 
 
 ### Opción 2 (Pantheon) ###
@@ -45,5 +34,22 @@ Pasos:
    **sh -c "$(curl -sSL https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/pantheon.sh)"**
 
 
+
 ### Opción 3 (Acquia) ###
 coming soon  
+
+
+
+### Datos Acceso ###
+
+**Acceso Drupal**  
+Host: NOMBREPROYECTO.localhost  
+Usuario: admin  
+Contraseña: admin  
+   
+**Base de datos**  
+**Adminer:** adminer.localhost  
+Nombre: NOMBREPROYECTO  
+usuario: NOMBREPROYECTO  
+Contraseña: NOMBREPROYECTO  
+Servidor: NOMBREPROYECTO_mysql_1   
