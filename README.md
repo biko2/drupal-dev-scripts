@@ -31,7 +31,7 @@ Pasos:
 
 3. Descargar la base de datos (.sql) y copiarla al raíz de la carpeta del proyecto.
 
-4. En el terminal ejecutar:
+4. En el terminal ejecutar:  
    **sh -c "$(curl -sSL https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/pantheon.sh)"**
 
 
