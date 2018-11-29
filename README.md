@@ -24,7 +24,7 @@ Pasos:
 
 ### Opción 2 (Pantheon) ###
 
-1. Crear sitio en pantheon (en caso de no ser así)
+1. Crear sitio en pantheon (si no está creado)
 
 2. Abrir el terminal donde alojes tus proyectos y ejecutar:
    ** git clone REPOSITORIO CARPETA-PROYECTO **
