@@ -73,6 +73,10 @@ cp -r $RUTA/tmp/. $RUTA/sites/default
 sudo rm -r tmp
 
 
+# Editamos el archivo settings.local.php
+cd $RUTA/sites/default
+sed -i 's/docker/'"$PROYECTO"'/g' "settings.local.php"
+
 
 # Iniciamos la imagen docker
 # cd $mypwd/$PROYECTO
