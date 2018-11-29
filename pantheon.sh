@@ -65,7 +65,12 @@ cd $RUTA/private/$PROYECTO
 sed -i 's/docker/'"$PROYECTO"'/g' ".env"
 
 
-
+# Proporcionamos un settings.local.php
+cd $RUTA
+git clone https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/settings.local.php tmp
+sudo chown -R $USER /tmp
+cp -r $RUTA/tmp/. $RUTA/sites/default
+sudo rm -r tmp
 
 
 
