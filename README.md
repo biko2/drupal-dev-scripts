@@ -33,8 +33,16 @@ Pasos:
 
 
 ### Opción 2 (Pantheon) ###
-coming soon  
 
+1. Crear sitio en pantheon (en caso de no ser así)
+
+2. Abrir el terminal donde alojes tus proyectos y ejecutar:
+   ** git clone REPOSITORIO CARPETA-PROYECTO **
+
+3. Descargar la base de datos (.sql) y copiarla al raíz de la carpeta del proyecto.
+
+4. En el terminal ejecutar:
+   **sh -c "$(curl -sSL https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/pantheon.sh)"**
 
 
 ### Opción 3 (Acquia) ###

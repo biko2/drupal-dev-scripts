@@ -71,7 +71,7 @@ sudo docker-compose exec web drush site-install $perfil --locale=es --account-na
 
 
 # Parche para que el perfil demo funcione bien
-if [ "$perfil"=="demo_umami" ]
+if [ "$perfil" == "demo_umami" ]
 then
   docker-compose exec web drush pmu demo_umami_content
   docker-compose exec web drush en demo_umami_content -y
@@ -118,4 +118,3 @@ xdg-open http://$myhost
 
 # Entramos en la maquina docker
 docker-compose exec web bash
-
