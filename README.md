@@ -26,8 +26,8 @@ Pasos:
 
 1. Crear sitio en pantheon (si no está creado)
 
-2. Abrir el terminal donde alojes tus proyectos y ejecutar:
-   ** git clone REPOSITORIO CARPETA-PROYECTO **
+2. Abrir el terminal donde alojes tus proyectos y ejecutar:  
+   **git clone REPOSITORIO CARPETA-PROYECTO**
 
 3. Descargar la base de datos (.sql) y copiarla al raíz de la carpeta del proyecto.
 
