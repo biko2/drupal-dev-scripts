@@ -66,9 +66,8 @@ sed -i 's/docker/'"$PROYECTO"'/g' ".env"
 
 
 # Proporcionamos un settings.local.php
-cd $RUTA
-mkdir tmp
-git clone https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/settings.local.php tmp
+cd $RUTA && mkdir tmp && cd tmp
+wget https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/settings.local.php
 sudo chown -R $USER /tmp
 cp -r $RUTA/tmp/. $RUTA/sites/default
 sudo rm -r tmp
