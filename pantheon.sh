@@ -18,6 +18,9 @@ RUTA=$(pwd)
 # Nombre proyecto
 PROYECTO=$(basename $RUTA)
 
+# Ruta docker
+RUTADOCKER=$RUTA/private/$PROYECTO
+
 
 # Comprobar que se ejecuta phanteon.sh en la carpeta correcta
 checkpantheon=$(find $RUTA -maxdepth 1 -type f -name pantheon.yml)
@@ -57,7 +60,7 @@ sed -i 's/drupal.localhost/'"$myhost"'/g' "docker.conf"
 
 
 # Editamos el archivo .env para cambiar datos de conexión a la base de datos
-cd $RUTA/private/$PROYECTO
+cd $RUTADOCKER
 sed -i 's/docker/'"$PROYECTO"'/g' ".env"
 
 
@@ -74,10 +77,11 @@ sed -i 's/localhost_bd/'"$HOST"'/g' "settings.local.php"
 
 
 # Iniciamos la imagen docker
-cd $RUTA/private/$PROYECTO
+cd $RUTADOCKER
 docker-compose up -d
 docker-compose ps
 
 
 # Importar base de datos
+cd $RUTADOCKER
 docker-compose exec web `drush sql-connect` < $searchsql
