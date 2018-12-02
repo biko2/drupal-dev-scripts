@@ -64,7 +64,7 @@ cd $RUTADOCKER
 sed -i 's/docker/'"$PROYECTO"'/g' ".env"
 ruta1='./:/var/www/html'
 ruta2='../../:/var/www/html'
-sed -i 's/"$ruta1"/"$ruta2"/g' "docker-compose.yml"
+sed -i 's/"./:/var/www/html"/"../../:/var/www/html"/g' "docker-compose.yml"
 
 
 # Proporcionamos un settings.local.php
