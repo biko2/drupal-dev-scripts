@@ -84,4 +84,4 @@ docker-compose ps
 
 
 # Importar base de datos
-# `drush sql-connect` < example.sql
+`drush sql-connect` < $searchsql
