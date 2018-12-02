@@ -78,7 +78,7 @@ sed -i 's/localhost_bd/'"$HOST"'/g' "settings.local.php"
 
 
 # Iniciamos la imagen docker
-cd $RUTA
+cd $RUTA/private/$PROYECTO
 docker-compose up -d
 docker-compose ps
 
