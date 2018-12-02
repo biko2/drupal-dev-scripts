@@ -67,7 +67,9 @@ sed -i 's#./:/var/www/html#../../:/var/www/html/web#g' "docker-compose.yml"
 
 # Proporcionamos un settings.local.php
 cd $RUTA/sites/default
-wget https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/settings.local.php
+if [ ! -f settings.local.php ]; then
+    wget https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/settings.local.php
+fi
 
 
 # Editamos el archivo settings.local.php
