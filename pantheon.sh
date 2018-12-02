@@ -85,4 +85,4 @@ docker-compose ps
 
 # Importar base de datos
 cd $RUTADOCKER
-docker-compose exec web drush
+docker-compose exec web drush st
