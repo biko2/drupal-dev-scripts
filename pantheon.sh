@@ -84,4 +84,4 @@ docker-compose ps
 
 # Importar base de datos
 cd $RUTADOCKER
-docker-compose exec web `drush sql-connect` < $searchsql
+docker-compose exec web drush
