@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# 4 - descargar docker con settings.local.php
-# 7 - levantar docker
-# 8 - entrar bash docker
-# 9 - importar bd --  `drush sql-connect` < example.sql
 # 10 - borrar caches, cron y watchdog
 # 11 - abrir ventana sitio
 # 12 - instalar dependencias tema y compilar
@@ -84,4 +80,4 @@ docker-compose ps
 
 
 # Importar base de datos
-`drush sql-connect` < $searchsql
+docker-compose exec web `drush sql-connect` < $searchsql
