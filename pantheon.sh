@@ -76,6 +76,9 @@ sudo rm -r tmp
 # Editamos el archivo settings.local.php
 cd $RUTA/sites/default
 sed -i 's/docker/'"$PROYECTO"'/g' "settings.local.php"
+HOST='$PROYECTO'_mysql_1
+echo $HOST
+sed -i 's/docker/'"$HOST"'/g' "settings.local.php"
 
 
 # Iniciamos la imagen docker
