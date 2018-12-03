@@ -81,16 +81,17 @@ fi
 # Editamos el archivo settings.local.php
 cd $RUTA/sites/default
 HOST=$PROYECTO_mysql_1
+echo $HOST
 sed -i 's/docker/'"$PROYECTO"'/g' "settings.local.php"
 sed -i 's/localhost_bd/'"$HOST"'/g' "settings.local.php"
 
 
 # Iniciamos la imagen docker
-cd $RUTADOCKER
-docker-compose up -d
-docker-compose ps
+# cd $RUTADOCKER
+# docker-compose up -d
+# docker-compose ps
 
 
 # Importar base de datos
-cd $RUTADOCKER
-docker-compose exec web drush st
+# cd $RUTADOCKER
+# docker-compose exec web drush st
