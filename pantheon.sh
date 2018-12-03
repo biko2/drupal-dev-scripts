@@ -7,6 +7,8 @@
 # curl -sSL https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/pantheon-launcher.sh | bash -s -- OLA
 
 
+# sh -c "$(curl -sSL https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/pantheon.sh)"
+
 # Detener todos los servicios docker
 docker stop $(docker ps -a)
 clear
