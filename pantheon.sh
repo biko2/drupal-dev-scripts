@@ -59,7 +59,7 @@ cd $RUTA/private/$PROYECTO/docker/web/vhosts
 myhost=$PROYECTO.localhost
 sed -i 's/drupal.localhost/'"$myhost"'/g' "docker.conf"
 sed -i 's#/var/www/html/web#/var/www/html#g' "docker.conf"
-sed -i 's#/var/www/html/docker/web/docker#/var/www/html/private/$PROYECTO/docker/web/docker#g' "docker.conf"
+sed -i 's#/var/www/html/docker/web/docker#/var/www/html/private/'"$PROYECTO"'/docker/web/docker#g' "docker.conf"
 
 
 
