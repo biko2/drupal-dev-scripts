@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# 10 - borrar caches, cron y watchdog
 # 11 - abrir ventana sitio
 # 12 - instalar dependencias tema y compilar
 # 13 - abrir terminal bash
@@ -95,5 +94,15 @@ docker-compose ps
 
 # Importar base de datos
 cd $RUTADOCKER
-docker-compose exec web drush status
 docker-compose exec web drush sql-cli < ~/$searchsql
+
+
+# Borramos caches drupal
+docker-compose exec web drush cr
+docker-compose exec web drush status
+
+# Abrimos el navegador con nuestra web
+xdg-open http://$myhost
+
+# Entramos en la maquina docker
+docker-compose exec web bash
