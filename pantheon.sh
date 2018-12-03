@@ -92,7 +92,7 @@ docker-compose ps
 
 # Importar base de datos
 cd $RUTADOCKER
-docker-compose exec web drush sql-cli < ~/$searchsql
+docker-compose exec web drush sql-cli < $searchsql
 
 
 # Borramos caches drupal
