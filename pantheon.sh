@@ -94,7 +94,7 @@ docker-compose exec web chmod -R 777 /var/www/html/sites/default/files
 
 # Importar base de datos
 cd $RUTADOCKER
-docker-compose exec web drush sql-cli < $searchsql
+docker-compose exec web drush sql-cli < /var/www/html/$searchsql
 
 # Borramos caches drupal
 docker-compose exec web drush cr
