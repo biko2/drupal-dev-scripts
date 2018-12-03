@@ -80,8 +80,8 @@ fi
 
 # Editamos el archivo settings.local.php
 cd $RUTA/sites/default
-HOST=$PROYECTO_mysql_1
-echo $HOST
+HOST=$PROYECTO'_mysql_1'
+echo 'host: '$HOST
 sed -i 's/docker/'"$PROYECTO"'/g' "settings.local.php"
 sed -i 's/localhost_bd/'"$HOST"'/g' "settings.local.php"
 
