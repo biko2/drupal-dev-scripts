@@ -31,7 +31,7 @@ fi
 
 
 # Comprobar si existe una base de datos (SQL) en la raíz del proyecto
-searchsql=$(find $RUTA -maxdepth 1 -type f -name *.sql)
+searchsql=$(find $RUTA -maxdepth 1 -type f -name *.sql -printf "%f\n")
 if [ -n "$searchsql" ]; then
   echo "Se importara la siguiente base de datos" $searchsql
 else
