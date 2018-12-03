@@ -88,9 +88,9 @@ sed -i 's/localhost_bd/'"$HOST"'/g' "settings.local.php"
 
 
 # Iniciamos la imagen docker
-# cd $RUTADOCKER
-# docker-compose up -d
-# docker-compose ps
+cd $RUTADOCKER
+docker-compose up -d
+docker-compose ps
 
 
 # Importar base de datos
