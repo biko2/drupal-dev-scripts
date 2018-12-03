@@ -1,8 +1,6 @@
 #!/bin/bash
 
-# 11 - abrir ventana sitio
 # 12 - instalar dependencias tema y compilar
-# 13 - abrir terminal bash
 # curl -sSL https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/pantheon-launcher.sh | bash -s -- OLA
 
 
