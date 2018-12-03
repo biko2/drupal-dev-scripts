@@ -90,7 +90,7 @@ docker-compose ps
 
 
 # Permisos carpeta files
-docker-compose exec web chmod -R 777 /var/www/html/web/sites/default/files
+docker-compose exec web chmod -R 777 /var/www/html/sites/default/files
 
 # Importar base de datos
 cd $RUTADOCKER
