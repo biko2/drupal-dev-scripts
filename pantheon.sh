@@ -63,6 +63,9 @@ sed -i 's/drupal.localhost/'"$myhost"'/g' "docker.conf"
 cd $RUTADOCKER
 sed -i 's/docker/'"$PROYECTO"'/g' ".env"
 sed -i 's#./:/var/www/html#./../../:/var/www/html#g' "docker-compose.yml"
+sed -i 's#working_dir: /var/www/html/web#working_dir: /var/www/html#g' "docker-compose.yml"
+
+
 
 
 # Proporcionamos un settings.local.php
