@@ -89,10 +89,12 @@ docker-compose up -d
 docker-compose ps
 
 
+# Permisos carpeta files
+docker-compose exec web chmod -R 777 /var/www/html/web/sites/default/files
+
 # Importar base de datos
 cd $RUTADOCKER
 docker-compose exec web drush sql-cli < $searchsql
-
 
 # Borramos caches drupal
 docker-compose exec web drush cr
