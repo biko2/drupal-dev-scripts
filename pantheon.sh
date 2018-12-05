@@ -92,7 +92,7 @@ docker-compose ps
 
 
 # Permisos carpeta files
-docker-compose exec web bash -c "cd /var/www/html/sites/default && mkdir files && cd files && mkdir translations"
+docker-compose exec web bash -c "cd /var/www/html/sites/default && mkdir files && cd files && mkdir translations && mkdir private"
 docker-compose exec web bash -c "cd /var/www/html/sites/default && chmod -R 777 files"
 
 
