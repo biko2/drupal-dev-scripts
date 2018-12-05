@@ -90,7 +90,7 @@ docker-compose ps
 
 
 # Permisos carpeta files
-docker-compose exec web chmod -R 777 /var/www/html/sites/default/files
+docker-compose exec web bash chmod -R 777 /var/www/html/sites/default/files
 
 # Importar base de datos
 cd $RUTADOCKER
@@ -104,4 +104,4 @@ docker-compose exec web drush status
 xdg-open http://$myhost
 
 # Entramos en la maquina docker
-docker-compose exec web bash
+# docker-compose exec web bash
