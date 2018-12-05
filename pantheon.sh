@@ -48,6 +48,9 @@ git clone https://github.com/biko2/drupal-dev.git $PROYECTO
 sudo chown -R $USER $PROYECTO
 
 
+# Permisos files
+sudo chmod -R 777 $RUTA/sites/default/files
+
 
 # Editamos el archivo docker.conf y establecemos nuestro ServerName
 cd $RUTA/private/$PROYECTO/docker/web/vhosts
