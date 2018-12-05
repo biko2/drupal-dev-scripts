@@ -104,4 +104,4 @@ docker-compose exec web drush status
 xdg-open http://$myhost
 
 # Entramos en la maquina docker
-# docker-compose exec web bash
+docker-compose exec web bash
