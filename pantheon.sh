@@ -106,3 +106,6 @@ xdg-open http://$myhost
 
 # Entramos en la maquina docker
 docker-compose exec web bash
+
+
+
