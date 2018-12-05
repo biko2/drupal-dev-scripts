@@ -2,7 +2,6 @@
 
 # 12 - instalar dependencias tema y compilar
 # 13 - adminer
-
 # sh -c "$(curl -sSL https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/pantheon.sh)"
 
 
@@ -107,6 +106,3 @@ xdg-open http://$myhost
 
 # Entramos en la maquina docker
 docker-compose exec web bash
-
-
-
