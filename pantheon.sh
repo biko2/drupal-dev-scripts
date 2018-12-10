@@ -103,8 +103,8 @@ cd $RUTADOCKER
 docker-compose exec web bash -c "drush sql-cli < $searchsql"
 
 # Borramos caches drupal
-docker-compose exec web drush cr
-docker-compose exec web drush status
+# docker-compose exec web drush cr
+# docker-compose exec web drush status
 
 # Abrimos el navegador con nuestra web
 # xdg-open http://$myhost
