@@ -93,24 +93,24 @@ docker-compose ps
 
 # Permisos carpeta files
 cd $RUTADOCKER
-docker-compose exec web bash mkdir ~/var/www/html/sites/default/files
-docker-compose exec web bash mkdir ~/var/www/html/sites/default/files/translations
-docker-compose exec web bash mkdir ~/var/www/html/sites/default/files/private
-docker-compose exec web bash chmod -R 777 ~/var/www/html/sites/default/files
+docker-compose exec web mkdir ~/var/www/html/sites/default/files
+docker-compose exec web mkdir ~/var/www/html/sites/default/files/translations
+docker-compose exec web mkdir ~/var/www/html/sites/default/files/private
+docker-compose exec web chmod -R 777 ~/var/www/html/sites/default/files
 
 
 echo $searchsql
 
 # Importar base de datos
 cd $RUTADOCKER
-docker-compose exec web bash drush sql-cli < ~/var/www/$searchsql
+docker-compose exec web drush sql-cli < ~/var/www/$searchsql
 
 # Borramos caches drupal
-# docker-compose exec web drush cr
-# docker-compose exec web drush status
+docker-compose exec web drush cr
+docker-compose exec web drush status
 
 # Abrimos el navegador con nuestra web
-# xdg-open http://$myhost
+xdg-open http://$myhost
 
 # Entramos en la maquina docker
-# docker-compose exec web bash
+docker-compose exec web bash
