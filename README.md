@@ -11,7 +11,7 @@ Docker image: https://github.com/biko2/drupal-dev
 Pasos:
 
 1. Abrir el terminal donde alojes tus proyectos y ejecutar:  
-   **sh -c "$(curl -sSL https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/docker-launcher.sh)"**
+   **sh -c "$(curl -sSL https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/local.sh)"**
    
 2. Escribir un nombre para tu proyecto. (ejem: biko2)
 
