@@ -1,7 +1,12 @@
 #!/bin/bash
 
-# 12 - instalar dependencias tema y compilar
-# 13 - adminer
+# - Instalar dependencias tema y compilar
+# - Adminer
+# - Configurar permisos carpeta files para usuario no docker
+# - Importar auto bd
+# - Carpeta private ya existe
+# - carpeta private/config/sync
+
 # sh -c "$(curl -sSL https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/pantheon.sh)"
 
 
