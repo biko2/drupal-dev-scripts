@@ -79,7 +79,7 @@ fi
 
 
 # Incluir modulos basicos
-composer require 'drupal/ctools:^3.0' 'drupal/pathauto:^1.3' 'drupal/token:^1.5' 'drupal/admin_toolbar:^1.24' 'drupal/config_filter:^1.4' 'drupal/devel:^1.2' 'drupal/field_group:^3.0' 'drupal/config_ignore:^2.1' 'drupal/metatag:^1.7' 'drupal/google_tag:^1.1' 'drupal/paragraphs:^1.5' 'drupal/eu_cookie_compliance:^1.2'
+composer require 'drupal/ctools:^3.0' 'drupal/pathauto:^1.3' 'drupal/token:^1.5' 'drupal/admin_toolbar:^1.24' 'drupal/config_filter:^1.4' 'drupal/devel:^1.2' 'drupal/field_group:^3.0' 'drupal/config_ignore:^2.1' 'drupal/metatag:^1.7' 'drupal/google_tag:^1.1' 'drupal/paragraphs:^1.5' 'drupal/eu_cookie_compliance:^1.2' 'drupal/stage_file_proxy'
 
 
 # Desinstalar modulos core no habituales
