@@ -4,8 +4,7 @@
 # - Adminer
 # - Configurar permisos carpeta files para usuario no docker
 # - Importar auto bd
-# - Carpeta private ya existe
-# - carpeta private/config/sync
+# - comprobar si existe carpeta docker /private/PROYECTO (2ª vez)
 
 # sh -c "$(curl -sSL https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/pantheon.sh)"
 
