@@ -5,6 +5,7 @@
 # - Configurar permisos carpeta files para usuario no docker
 # - Importar auto bd
 # - comprobar si existe carpeta docker /private/PROYECTO (2ª vez)
+# - quitar git clone y usar wget
 
 # sh -c "$(curl -sSL https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/pantheon.sh)"
 
