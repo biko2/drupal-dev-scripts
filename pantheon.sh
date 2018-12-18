@@ -87,7 +87,7 @@ fi
 
 # Editamos el archivo settings.local.php
 cd $RUTA/sites/default
-HOST=$PROYECTO'_mysql_1'
+HOST=docker ps | grep _mysql_ | awk '{print $NF}'
 sed -i 's/docker/'"$PROYECTO"'/g' "settings.local.php"
 sed -i 's/localhost_bd/'"$HOST"'/g' "settings.local.php"
 
