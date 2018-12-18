@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# - Instalar dependencias tema y compilar
 # - Adminer
 # - Configurar permisos carpeta files para usuario no docker
 # - Importar auto bd
