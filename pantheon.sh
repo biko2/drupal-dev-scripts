@@ -6,7 +6,6 @@
 # - Importar auto bd
 # - comprobar si existe carpeta docker /private/PROYECTO (2ª vez)
 # - quitar git clone y usar wget
-# - https://www.drupaleasy.com/quicktips/automatic-removal-git-directories-composer-dependencies
 # - precommit
 
 # sh -c "$(curl -sSL https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/pantheon.sh)"
