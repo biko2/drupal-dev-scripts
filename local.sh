@@ -3,6 +3,8 @@
 # Crea un nuevo proyecto con drupal 8 y docker
 # Instalación de drupal 8 ( default user:admin / pass:admin)
 
+# Instalar dependencias tema y compilar
+
 
 # Nombre del proyecto y base de datos
 echo "Introduce un nombre para el nuevo proyecto en minúsculas y sin espacios. (Ejemplo: biko2)"
