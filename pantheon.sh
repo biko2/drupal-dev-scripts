@@ -45,6 +45,10 @@ else
   exit 1
 fi
 
+# Automatic removal of .git directories from Composer dependencies
+# https://www.drupaleasy.com/quicktips/automatic-removal-git-directories-composer-dependencies
+composer require topfloor/composer-cleanup-vcs-dirs
+
 
 # Descargar imagen docker
 # https://github.com/biko2/drupal-dev
