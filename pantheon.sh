@@ -48,6 +48,18 @@ fi
 composer require topfloor/composer-cleanup-vcs-dirs
 
 
+# Precommit
+cd $RUTA/private
+git clone https://github.com/biko2/drupal-dev-precommit.git git_hooks
+cd git_hooks
+chmod +x pre-commit
+cd $RUTA
+composer require "squizlabs/php_codesniffer=*" drupal/coder dealerdirect/phpcodesniffer-composer-installer phpmd/phpmd
+php vendor/bin/phpcs --config-set installed_paths vendor/drupal/coder/coder_sniffer
+cd .git/hooks
+ln -s ../../private/git_hooks/pre-commit pre-commit
+
+
 # Descargar imagen docker
 # https://github.com/biko2/drupal-dev
 cd $RUTA
