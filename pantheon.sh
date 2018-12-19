@@ -48,6 +48,7 @@ composer require topfloor/composer-cleanup-vcs-dirs
 
 
 # Precommit
+# https://github.com/biko2/drupal-dev-precommit
 cd $RUTA/private
 git clone https://github.com/biko2/drupal-dev-precommit.git git_hooks
 cd git_hooks
