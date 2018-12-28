@@ -1,10 +1,12 @@
 #!/bin/bash
 
 # - Adminer
-# - Configurar permisos carpeta files para usuario no docker
+# - Configurar permisos carpeta files para usuario no docker 
+#     (solucion dorado) configurar /etc/subuid  /etc/subgid y luego el /etc/docker/daemon.json
 # - Importar auto bd
 # - comprobar si existe carpeta docker /private/PROYECTO (2ª vez)
 # - quitar git clone y usar wget
+
 
 # sh -c "$(curl -sSL https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/pantheon.sh)"
 
