@@ -7,6 +7,8 @@
 # - comprobar si existe carpeta docker /private/PROYECTO (2ª vez)
 # - quitar git clone y usar wget
 # - conmtemplar cambios php.ini mysql.conf con datos custom (fetri)
+#   https://docops.ca.com/ca-api-gateway/9-1/en/other-gateway-form-factors/using-the-gateway-docker-appliance/appendixes-gateway-docker-appliance/add-custom-my-cnf-settings-to-mysql-container
+#   https://hub.docker.com/_/mysql
 
 
 # sh -c "$(curl -sSL https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/pantheon.sh)"
