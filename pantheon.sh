@@ -119,10 +119,10 @@ docker-compose ps
 
 # Permisos carpeta files
 cd $RUTADOCKER
-docker-compose exec web mkdir ../../sites/default/files
-docker-compose exec web mkdir ../../sites/default/files/translations
-docker-compose exec web mkdir ../../sites/default/files/private
-docker-compose exec web chmod -R 777 ../../sites/default/files
+docker-compose exec web mkdir sites/default/files
+docker-compose exec web mkdir sites/default/files/translations
+docker-compose exec web mkdir sites/default/files/private
+docker-compose exec web chmod -R 777 sites/default/files
 
 
 
