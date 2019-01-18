@@ -135,5 +135,5 @@ $databases['default']['default'] = array(
   'database' => 'docker',
   'username' => 'docker',
   'password' => 'docker',
-  'host' => 'bdocker',
+  'host' => 'mysql_1',
 );
