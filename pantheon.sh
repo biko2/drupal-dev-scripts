@@ -106,13 +106,13 @@ fi
 
 # Editamos el archivo settings.local.php
 cd $RUTADOCKER
-HOST=$(docker ps | grep _mysql_ | awk '{print $NF}')
-echo "$HOST"
+NAMEBD=$(docker ps | grep _mysql_ | awk '{print $NF}')
+echo "$NAMEBD"
 echo "ola"
 
 cd $RUTA/sites/default
 sed -i 's/docker/'"$PROYECTO"'/g' "settings.local.php"
-sed -i 's/mysql_1/'"$HOST"'/g' "settings.local.php"
+sed -i 's/mysql_1/'"$NAMEBD"'/g' "settings.local.php"
 
 
 # Iniciamos la imagen docker
