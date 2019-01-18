@@ -54,15 +54,15 @@ composer require topfloor/composer-cleanup-vcs-dirs
 
 # Precommit
 # https://github.com/biko2/drupal-dev-precommit
-cd $RUTA/private
-git clone https://github.com/biko2/drupal-dev-precommit.git git_hooks
-cd git_hooks
-chmod +x pre-commit
-cd $RUTA
-composer require "squizlabs/php_codesniffer=*" drupal/coder dealerdirect/phpcodesniffer-composer-installer phpmd/phpmd
-php vendor/bin/phpcs --config-set installed_paths vendor/drupal/coder/coder_sniffer
-cd .git/hooks
-ln -s ../../private/git_hooks/pre-commit pre-commit
+# cd $RUTA/private
+# git clone https://github.com/biko2/drupal-dev-precommit.git git_hooks
+# cd git_hooks
+# chmod +x pre-commit
+# cd $RUTA
+# composer require "squizlabs/php_codesniffer=*" drupal/coder dealerdirect/phpcodesniffer-composer-installer phpmd/phpmd
+# php vendor/bin/phpcs --config-set installed_paths vendor/drupal/coder/coder_sniffer
+# cd .git/hooks
+# ln -s ../../private/git_hooks/pre-commit pre-commit
 
 
 # Descargar imagen docker
@@ -107,6 +107,7 @@ fi
 # Editamos el archivo settings.local.php
 cd $RUTADOCKER
 HOST=$(docker ps | grep _mysql_ | awk '{print $NF}')
+echo $HOST
 
 cd $RUTA/sites/default
 sed -i 's/docker/'"$PROYECTO"'/g' "settings.local.php"
@@ -131,15 +132,15 @@ docker-compose exec web chmod -R 777 sites/default/files
 # Importar base de datos
 cd $RUTADOCKER
 echo $searchsql
-docker-compose exec web drush sql-drop
-docker-compose exec web drush sql-cli < $searchsql
+# docker-compose exec web drush sql-drop
+# docker-compose exec web drush sql-cli < $searchsql
 
 # Borramos caches drupal
-docker-compose exec web drush cr
+# docker-compose exec web drush cr
 docker-compose exec web drush status
 
 # Abrimos el navegador con nuestra web
-xdg-open http://$myhost
+# xdg-open http://$myhost
 
 # Entramos en la maquina docker
 docker-compose exec web bash
