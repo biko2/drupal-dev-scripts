@@ -108,7 +108,7 @@ fi
 cd $RUTADOCKER
 NAMEBD=$(docker ps | grep _mysql_ | awk '{print $NF}')
 echo "$NAMEBD"
-echo "ola"
+echo "namebd"
 
 cd $RUTA/sites/default
 sed -i 's/docker/'"$PROYECTO"'/g' "settings.local.php"
