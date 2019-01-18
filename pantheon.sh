@@ -106,7 +106,7 @@ fi
 
 # Editamos el archivo settings.local.php
 cd $RUTADOCKER
-HOST="$(docker ps | grep _mysql_ | awk '{print $NF}')"
+HOST=$(docker ps | grep _mysql_ | awk '{print $NF}')
 echo "${HOST}"
 
 cd $RUTA/sites/default
