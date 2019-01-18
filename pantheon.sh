@@ -11,7 +11,7 @@
 #   https://hub.docker.com/_/mysql
 
 
-# sh -c "$(curl -sSL https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/pantheon.sh)"
+# sh -c "$(curl -sSL -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/pantheon.sh)"
 
 
 # Detener todos los servicios docker
