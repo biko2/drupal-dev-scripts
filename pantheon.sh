@@ -106,9 +106,9 @@ fi
 
 # Editamos el archivo settings.local.php
 cd $RUTADOCKER
-NAMEBD=$(docker ps | grep _mysql_ | awk '{print $NF}')
+NAMEBD="$(docker ps | grep _mysql_ | awk '{print $NF}')"
 echo "$NAMEBD"
-echo "namebd"
+echo "namebd2"
 
 cd $RUTA/sites/default
 sed -i 's/docker/'"$PROYECTO"'/g' "settings.local.php"
