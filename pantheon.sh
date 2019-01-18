@@ -111,7 +111,7 @@ echo "${HOST}"
 
 cd $RUTA/sites/default
 sed -i 's/docker/'"$PROYECTO"'/g' "settings.local.php"
-sed -i 's/localhostbd/'"${HOST}"'/g' "settings.local.php"
+sed -i 's/bdocker/'"${HOST}"'/g' "settings.local.php"
 
 
 # Iniciamos la imagen docker
