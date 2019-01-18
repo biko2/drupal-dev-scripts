@@ -107,7 +107,8 @@ fi
 # Editamos el archivo settings.local.php
 cd $RUTADOCKER
 HOST=$(docker ps | grep _mysql_ | awk '{print $NF}')
-echo "$HOST" database
+echo "$HOST"
+echo "ola"
 
 cd $RUTA/sites/default
 sed -i 's/docker/'"$PROYECTO"'/g' "settings.local.php"
