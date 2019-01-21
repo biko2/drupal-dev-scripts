@@ -128,15 +128,15 @@ docker-compose exec web chmod -R 777 $ROOTDOCKER$FILES
 
 # Importar base de datos
 cd $RUTADOCKER
-docker-compose exec web drush sql-drop
+# docker-compose exec web drush sql-drop
 docker exec -i $NAMEBD mysql -u$PROYECTO -p$PROYECTO $PROYECTO < ../../$searchsql
 
 # Borramos caches drupal
-docker-compose exec web drush cr
+# docker-compose exec web drush cr
 docker-compose exec web drush status
-sleep 10
+# sleep 10
 
 # Abrimos el navegador con nuestra web
-xdg-open http://$myhost
-xdg-open http://adminer.localhost
-xdg-open https://media.giphy.com/media/dIxkmtCuuBQuM9Ux1E/giphy
+# xdg-open http://$myhost
+# xdg-open http://adminer.localhost
+# xdg-open https://media.giphy.com/media/dIxkmtCuuBQuM9Ux1E/giphy
