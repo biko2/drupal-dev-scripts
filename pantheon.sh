@@ -32,6 +32,7 @@ fi
 
 # Comprobar si existe una base de datos (SQL) en la raíz del proyecto
 searchsql=$(find $RUTA -maxdepth 1 -type f -name *.sql -printf "%f\n")
+cd $RUTA && chmod 777 $searchsql
 if [ -n "$searchsql" ]; then
   echo "Se importara la siguiente base de datos" $searchsql
 else
@@ -127,11 +128,14 @@ docker-compose exec web chmod -R 777 $ROOTDOCKER$FILES
 
 
 # Importar base de datos
-cd $RUTADOCKER
-docker-compose exec web drush sql-drop
-docker exec -i $NAMEBD mysql -u$PROYECTO -p$PROYECTO $PROYECTO < ../../$searchsql
+cd $RUTA
+# docker-compose exec web drush sql-drop
+CONEXION='-u'"$PROYECTO"' -p'"$PROYECTO"' '"$PROYECTO"' < '"$searchsql"''
+# echo $CONEXION
+docker exec -i $NAMEBD mysql $CONEXION
 
 # Borramos caches drupal
+cd $RUTADOCKER
 docker-compose exec web drush cr
 docker-compose exec web drush status
 sleep 10
@@ -139,4 +143,4 @@ sleep 10
 # Abrimos el navegador con nuestra web
 xdg-open http://$myhost
 xdg-open http://adminer.localhost
-xdg-open https://media.giphy.com/media/dIxkmtCuuBQuM9Ux1E/giphy
+# xdg-open https://media.giphy.com/media/dIxkmtCuuBQuM9Ux1E/giphy
