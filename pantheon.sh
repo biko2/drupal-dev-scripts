@@ -158,9 +158,11 @@ if [ "$DATABASE" = 1 ]; then
 	# docker-compose exec web drush sql:drop -y
 	echo "No existen tablas en la base de datos."
 	if [ -n "$searchsql" ]; then
+		cd $RUTA
+		wget https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/import-database.sh
+		chmod 777 import-database.sh
 		cd $RUTADOCKER
-		docker-compose exec web wget https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/import-database.sh
-		docker-compose exec web ./import-database.sh
+		docker-compose exec web bash ./import-database.sh
     fi
 else
 	echo "Base de datos con tablas existentes."

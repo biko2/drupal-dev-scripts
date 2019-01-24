@@ -1,2 +1,2 @@
 #!/bin/bash
-drush sql:query --file=database.sql
+drush sql:query --file=./database.sql
