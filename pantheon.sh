@@ -2,7 +2,7 @@
 
 # - Configurar permisos carpeta files para usuario no docker (solucion dorado) configurar /etc/subuid  /etc/subgid y luego el /etc/docker/daemon.json
 
-# sh -c "$(curl -sSL -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/pantheon.sh)"
+# sh -c "$(curl -sSL https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/pantheon.sh)"
 
 
 # Detener todos los servicios docker
@@ -40,19 +40,6 @@ if [ -n "$checkinstalled" ]; then
   INSTALLED=true
 else
   INSTALLED=false
-fi
-
-
-# Comprobar si existe una base de datos (SQL) en la raíz del proyecto
-searchsql=$(find $RUTA -maxdepth 1 -type f -name *.sql -printf "%f\n")
-cd $RUTA && chmod 777 $searchsql
-if [ -n "$searchsql" ]; then
-  echo "Se importara la siguiente base de datos" $searchsql
-  mv $searchsql database.sql
-  chmod 777 database.sql
-else
-  echo "Error. No ha sido encontrada ninguna base de datos (.sql)"
-  exit 1
 fi
 
 
@@ -145,33 +132,43 @@ fi
 
 
 
-# Comprobar tablas bd
+
+# Comprobar si existe una base de datos (SQL) en la raíz del proyecto
+searchsql=$(find $RUTA -maxdepth 1 -type f -name *.sql -printf "%f\n")
+cd $RUTA && chmod 777 $searchsql
+if [ -n "$searchsql" ]; then
+  echo "Se importara la siguiente base de datos" $searchsql
+  mv $searchsql database.sql
+  chmod 777 database.sql
+else
+  echo "Error. No ha sido encontrada ninguna base de datos (.sql)"
+fi
+
+
+# Comprobar si esta instalado drupal
 cd $RUTADOCKER
-
-# if [ "$INSTALLED" = false ] ; then
-#	docker-compose exec web drush sql-drop -y
-# fi
-
 docker-compose exec web drush status bootstrap | grep -q Successful
 DATABASE=$?
 
-# Importar bd
+# Importar base de datos
 if [ "$DATABASE" = 1 ]; then
-	# docker-compose exec web drush sql:drop -y
 	echo "No existen tablas en la base de datos."
 	if [ -n "$searchsql" ]; then
 		cd $RUTADOCKER
 		docker-compose exec web wget https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/import-database.sh
 		docker-compose exec web chmod 777 import-database.sh
-		cd $RUTA
-		chmod 777 import-database.sh
 		cd $RUTADOCKER
 		docker-compose exec web bash ./import-database.sh
     fi
 else
-	echo "Base de datos con tablas existentes."
+	echo "Drupal ya está instalado."
 fi
 
+
+
+# Limpieza
+cd $RUTA
+sudo rm import-database.sh
 
 
 # Borramos caches drupal
