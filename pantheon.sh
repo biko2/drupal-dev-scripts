@@ -61,6 +61,7 @@ wget https://raw.githubusercontent.com/biko2/drupal-dev-precommit/master/git_hoo
 chmod +x pre-commit
 
 # cd $RUTA
+cd $RUTA
 composer require "squizlabs/php_codesniffer=*" drupal/coder dealerdirect/phpcodesniffer-composer-installer phpmd/phpmd
 php vendor/bin/phpcs --config-set installed_paths vendor/drupal/coder/coder_sniffer
 
@@ -138,7 +139,8 @@ cd $RUTA
 wget https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/import-database.sh
 cd $RUTADOCKER
 docker-compose exec web drush sql-drop
-docker-compose exec web bash ./import-database.sh
+docker-compose exec web drush sqlc < database.sql
+# docker-compose exec web bash ./import-database.sh
 
 
 # Borramos caches drupal
