@@ -18,7 +18,7 @@ PROYECTO=$(basename $RUTA)
 # Ruta docker
 RUTADOCKER=$RUTA/private/$PROYECTO
 
-# host
+# Host
 myhost=$PROYECTO.localhost
 
 
@@ -145,6 +145,8 @@ else
 fi
 
 
+
+
 # Comprobar si esta instalado drupal
 cd $RUTADOCKER
 docker-compose exec web drush status bootstrap | grep -q Successful
@@ -156,8 +158,8 @@ if [ "$DATABASE" = 1 ]; then
 	if [ -n "$searchsql" ]; then
 		cd $RUTADOCKER
 		docker-compose exec web wget https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/import-database.sh
-		docker-compose exec web chmod 777 import-database.sh
-		cd $RUTADOCKER
+		docker-compose stop
+		docker-compose up -d
 		docker-compose exec web bash ./import-database.sh
     fi
 else
