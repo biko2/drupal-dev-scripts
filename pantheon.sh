@@ -139,8 +139,8 @@ cd $RUTA
 wget https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/import-database.sh
 cd $RUTADOCKER
 docker-compose exec web drush sql-drop
-docker-compose exec web drush sqlc < database.sql
-# docker-compose exec web bash ./import-database.sh
+# docker-compose exec web drush sqlc < database.sql
+docker-compose exec web bash ./import-database.sh
 
 
 # Borramos caches drupal
