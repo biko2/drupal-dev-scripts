@@ -18,6 +18,9 @@ PROYECTO=$(basename $RUTA)
 # Ruta docker
 RUTADOCKER=$RUTA/private/$PROYECTO
 
+# host
+myhost=$PROYECTO.localhost
+
 
 
 
@@ -88,7 +91,6 @@ if [ "$INSTALLED" = false ] ; then
 
 	# Editamos el archivo docker.conf y establecemos nuestro ServerName
 	cd $RUTA/private/$PROYECTO/docker/web/vhosts
-	myhost=$PROYECTO.localhost
 	sed -i 's/drupal.localhost/'"$myhost"'/g' "docker.conf"
 	sed -i 's#/var/www/html/web#/var/www/html#g' "docker.conf"
 	sed -i 's#/var/www/html/docker/web/docker#/var/www/html/private/'"$PROYECTO"'/docker/web/docker#g' "docker.conf"
@@ -158,8 +160,10 @@ if [ "$DATABASE" = 1 ]; then
 	# docker-compose exec web drush sql:drop -y
 	echo "No existen tablas en la base de datos."
 	if [ -n "$searchsql" ]; then
+		cd $RUTADOCKER
+		docker-compose exec web wget https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/import-database.sh
+		docker-compose exec web chmod 777 import-database.sh
 		cd $RUTA
-		wget https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/import-database.sh
 		chmod 777 import-database.sh
 		cd $RUTADOCKER
 		docker-compose exec web bash ./import-database.sh
