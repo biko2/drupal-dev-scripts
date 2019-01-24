@@ -35,6 +35,7 @@ searchsql=$(find $RUTA -maxdepth 1 -type f -name *.sql -printf "%f\n")
 cd $RUTA && chmod 777 $searchsql
 if [ -n "$searchsql" ]; then
   echo "Se importara la siguiente base de datos" $searchsql
+  mv $searchsql database.sql
 else
   echo "Error. No ha sido encontrada ninguna base de datos (.sql)"
   exit 1
@@ -70,6 +71,7 @@ ln -s $RUTA/private/git_hooks/pre-commit pre-commit
 
 # Automatic removal of .git directories from Composer dependencies
 # https://www.drupaleasy.com/quicktips/automatic-removal-git-directories-composer-dependencies
+cd $RUTA
 composer require topfloor/composer-cleanup-vcs-dirs
 
 
@@ -132,20 +134,20 @@ docker-compose exec web chmod -R 777 $ROOTDOCKER$FILES
 
 
 # Importar base de datos
+cd $RUTA
+wget https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/import-database.sh
 cd $RUTADOCKER
-docker-compose exec web bash ./importar.sh
-# CONEXION='"$NAMEBD"' mysql -u'"$PROYECTO"' -p'"$PROYECTO"' '"$PROYECTO"' < database.sql
-# echo $CONEXION
-# docker exec -i mysql mysql -uasistente -pasistente asistente < database.sql
+docker-compose exec web drush sql-drop
+docker-compose exec web bash ./import-database.sh
 
 
 # Borramos caches drupal
-# cd $RUTADOCKER
-# docker-compose exec web drush cr
-# docker-compose exec web drush status
-# sleep 10
+cd $RUTADOCKER
+docker-compose exec web drush cr
+docker-compose exec web drush status
+sleep 10
 
 # Abrimos el navegador con nuestra web
-# xdg-open http://$myhost
-# xdg-open http://adminer.localhost
-# xdg-open https://media.giphy.com/media/dIxkmtCuuBQuM9Ux1E/giphy
+xdg-open http://$myhost
+xdg-open http://adminer.localhost
+xdg-open https://media.giphy.com/media/dIxkmtCuuBQuM9Ux1E/giphy
