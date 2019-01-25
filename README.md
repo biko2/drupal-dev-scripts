@@ -46,7 +46,7 @@ coming soon
    
 **Base de datos**  
 **Adminer:** adminer.localhost  
-Nombre: NOMBREPROYECTO  
-usuario: NOMBREPROYECTO  
-Contraseña: NOMBREPROYECTO  
+Nombre: docker  
+usuario: docker 
+Contraseña: docker 
 Servidor: NOMBREPROYECTO_mysql_1   
