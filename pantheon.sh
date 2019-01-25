@@ -86,7 +86,7 @@ if [ "$INSTALLED" = false ] ; then
 
 	# Editamos el archivo .env y docker-compose.yml
 	cd $RUTADOCKER
-	sed -i 's/docker/'"$PROYECTO"'/g' ".env"
+	# sed -i 's/docker/'"$PROYECTO"'/g' ".env"
 	sed -i 's#./:/var/www/html#./../../:/var/www/html#g' "docker-compose.yml"
 	sed -i 's#working_dir: /var/www/html/web#working_dir: /var/www/html#g' "docker-compose.yml"
 
