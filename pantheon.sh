@@ -113,7 +113,7 @@ if [ ! -f settings.local.php ]; then
 	echo "$NAMEBD"
 
 	cd $RUTA/sites/default
-	sed -i 's/docker/'"$PROYECTO"'/g' "settings.local.php"
+	# sed -i 's/docker/'"$PROYECTO"'/g' "settings.local.php"
 	sed -i 's/mysql_1/'"$NAMEBD"'/g' "settings.local.php"
 fi
 
