@@ -49,4 +49,4 @@ coming soon
 Nombre: docker  
 usuario: docker 
 Contraseña: docker 
-Servidor: NOMBREPROYECTO_mysql_1   
+Servidor: NOMBREPROYECTO_mysql_1  (ver nombre contenedor mysql: docker ps | grep _mysql_ | awk '{print $NF}')
