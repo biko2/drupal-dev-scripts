@@ -46,7 +46,7 @@ coming soon
    
 **Base de datos**  
 **Adminer:** adminer.localhost  
-Nombre: docker  
-usuario: docker 
+Nombre: docker 
+usuario: docker  
 Contraseña: docker 
 Servidor: NOMBREPROYECTO_mysql_1  (ver nombre contenedor mysql: docker ps | grep _mysql_ | awk '{print $NF}')
