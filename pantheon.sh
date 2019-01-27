@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # - Configurar permisos carpeta files para usuario no docker (solucion dorado) configurar /etc/subuid  /etc/subgid y luego el /etc/docker/daemon.json
-# sh -c "$(curl -sSL https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/pantheon.sh)"
 
 
 # Detener todos los servicios docker
@@ -139,7 +138,7 @@ if [ -n "$searchsql" ]; then
   mv $searchsql database.sql
   chmod 777 database.sql
 else
-  echo "Error. No ha sido encontrada ninguna base de datos (.sql)"
+  echo "No ha sido encontrada ninguna base de datos (.sql)"
 fi
 
 
@@ -158,15 +157,12 @@ if [ "$DATABASE" = 1 ]; then
 		docker-compose stop
 		docker-compose up -d
 		docker-compose exec web drush sql:query --file=./database.sql
+		cd $RUTA
+		rm database.sql
     fi
 else
 	echo "Drupal ya está instalado."
 fi
-
-
-# Borranos archivo .sql una vez importado
-cd $RUTA
-rm database.sql
 
 
 # Borramos caches drupal
