@@ -32,7 +32,7 @@ else
 fi
 
 
-# Comprobar si se ha instalado el entorno
+# Comprobar si se ha instalado docker
 checkinstalled=$(find $RUTADOCKER -maxdepth 1 -type f -name docker-compose.yml)
 if [ -n "$checkinstalled" ]; then
   INSTALLED=true
@@ -169,9 +169,10 @@ fi
 cd $RUTADOCKER
 docker-compose exec web drush cr
 docker-compose exec web drush status
+docker-compose exec web bash
 
 
 # Abrimos el navegador con nuestra web
+xdg-open https://media.giphy.com/media/dIxkmtCuuBQuM9Ux1E/giphy
 xdg-open http://$myhost
 xdg-open http://adminer.localhost
-xdg-open https://media.giphy.com/media/dIxkmtCuuBQuM9Ux1E/giphy
