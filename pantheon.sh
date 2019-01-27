@@ -1,12 +1,11 @@
 #!/bin/bash
 
 # - Configurar permisos carpeta files para usuario no docker (solucion dorado) configurar /etc/subuid  /etc/subgid y luego el /etc/docker/daemon.json
-
 # sh -c "$(curl -sSL https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/pantheon.sh)"
 
 
 # Detener todos los servicios docker
-docker stop $(docker ps -a)
+docker stop $(docker ps -a -q)
 clear
 
 # Ruta proyecto
@@ -86,7 +85,6 @@ if [ "$INSTALLED" = false ] ; then
 
 	# Editamos el archivo .env y docker-compose.yml
 	cd $RUTADOCKER
-	# sed -i 's/docker/'"$PROYECTO"'/g' ".env"
 	sed -i 's#./:/var/www/html#./../../:/var/www/html#g' "docker-compose.yml"
 	sed -i 's#working_dir: /var/www/html/web#working_dir: /var/www/html#g' "docker-compose.yml"
 
@@ -113,7 +111,6 @@ if [ ! -f settings.local.php ]; then
 	echo "$NAMEBD"
 
 	cd $RUTA/sites/default
-	# sed -i 's/docker/'"$PROYECTO"'/g' "settings.local.php"
 	sed -i 's/mysql_1/'"$NAMEBD"'/g' "settings.local.php"
 fi
 
@@ -121,13 +118,14 @@ fi
 
 
 # Permisos carpetas
-cd $RUTADOCKER
-FILES="/sites/default/files"
-ROOTDOCKER="/var/www/html"
+cd $RUTA
+FILES="./sites/default/files"
 
-if [ ! -d "$RUTA$FILES" ]; then
-  docker-compose exec web mkdir $ROOTDOCKER$FILES
-  docker-compose exec web chmod -R 777 $ROOTDOCKER$FILES
+if [ ! -d "$FILES" ]; then
+  cd $RUTADOCKER
+  echo "Creando carpeta Files..."
+  docker-compose exec web mkdir $FILES
+  docker-compose exec web chmod -R 777 $FILES
 fi
 
 
@@ -157,27 +155,24 @@ if [ "$DATABASE" = 1 ]; then
 	echo "No existen tablas en la base de datos."
 	if [ -n "$searchsql" ]; then
 		cd $RUTADOCKER
-		docker-compose exec web wget https://raw.githubusercontent.com/biko2/drupal-dev-scripts/master/import-database.sh
 		docker-compose stop
 		docker-compose up -d
-		docker-compose exec web bash ./import-database.sh
+		docker-compose exec web drush sql:query --file=./database.sql
     fi
 else
 	echo "Drupal ya está instalado."
 fi
 
 
-
-# Limpieza
+# Borranos archivo .sql una vez importado
 cd $RUTA
-sudo rm import-database.sh
+rm database.sql
 
 
 # Borramos caches drupal
 cd $RUTADOCKER
 docker-compose exec web drush cr
 docker-compose exec web drush status
-sleep 5
 
 
 # Abrimos el navegador con nuestra web
