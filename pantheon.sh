@@ -170,9 +170,11 @@ cd $RUTADOCKER
 docker-compose exec web drush cr
 docker-compose exec web drush status
 
+
 # Abrimos el navegador con nuestra web
 xdg-open https://media.giphy.com/media/dIxkmtCuuBQuM9Ux1E/giphy
 xdg-open http://$myhost
 xdg-open http://adminer.localhost
 
+echo "bash"
 docker-compose exec web bash
