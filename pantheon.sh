@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # - Configurar permisos carpeta files para usuario no docker (solucion dorado) configurar /etc/subuid  /etc/subgid y luego el /etc/docker/daemon.json
+# - Excluir del precommit la carpeta private
 
 
 # Detener todos los servicios docker
@@ -176,5 +177,4 @@ xdg-open http://$myhost
 xdg-open http://adminer.localhost
 xdg-open https://media.giphy.com/media/dIxkmtCuuBQuM9Ux1E/giphy
 
-echo "bash"
 docker-compose exec web bash
