@@ -166,6 +166,34 @@ else
 fi
 
 
+# Incluir tema COG y subtema front
+# https://github.com/biko2/front
+cd $RUTA/themes/custom/front
+if [ ! -f theme-setttings.php ]; then
+	echo "Desea instalar el tema COG y crear un subtema:  1)Si 2)No"
+	read t
+	case $t in
+	    1) composer require 'drupal/cog'
+	       cd $mypwd/$PROYECTO/web/themes
+	       mkdir custom
+	       cd $mypwd/$PROYECTO/web/themes/custom
+	       git clone https://github.com/biko2/front.git
+	       cd $mypwd/$PROYECTO/web/themes/custom/front
+	       npm install
+	       docker-compose exec web drush config-set system.theme default $PROYECTO
+	       xdg-open https://github.com/biko2/front
+	    ;;
+	    2) break
+	    ;;
+	    *) invalid option
+	    ;;
+	esac
+else
+   xdg-open https://github.com/biko2/front
+fi
+
+
+
 # Borramos caches drupal
 cd $RUTADOCKER
 docker-compose exec web drush cr
@@ -176,5 +204,3 @@ docker-compose exec web drush status
 xdg-open http://$myhost
 xdg-open http://adminer.localhost
 xdg-open https://media.giphy.com/media/dIxkmtCuuBQuM9Ux1E/giphy
-
-docker-compose exec web bash
