@@ -88,15 +88,14 @@ composer require 'drupal/ctools:^3.0' 'drupal/pathauto:^1.3' 'drupal/token:^1.5'
 docker-compose exec web drush pmu color history search tour contact
 
 
-<< COMMENT1
 # Incluir tema COG y subtema
 echo "Desea instalar el tema COG y crear un subtema:  1)Si 2)No"
 read t
 case $t in
-    1) composer require 'drupal/cog_tools'
-       docker-compose exec web drush en cog_tools
-       docker-compose exec web drush generate cog
-       docker-compose exec web drush theme:enable $PROYECTO
+    1) composer require 'drupal/cog'
+       cd $mypwd/$PROYECTO/web/themes
+       mkdir custom
+       git clone https://github.com/biko2/front.git $PROYECTO
        docker-compose exec web drush config-set system.theme default $PROYECTO
     ;;
     2) break
@@ -104,7 +103,6 @@ case $t in
     *) invalid option
     ;;
 esac
-COMMENT1
 
 
 # Permisos carpeta files
