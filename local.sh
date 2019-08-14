@@ -102,15 +102,17 @@ if [ ! -f theme-setttings.php ]; then
 	       cd $mypwd/$PROYECTO/web/themes/custom/front
 	       npm install
 	       docker-compose exec web drush config-set system.theme default $PROYECTO
-	       xdg-open https://github.com/biko2/front
 	    ;;
 	    2) break
 	    ;;
 	    *) invalid option
 	    ;;
 	esac
-else
-   xdg-open https://github.com/biko2/front
+fi
+
+if [ -f theme-setttings.php ]; then
+  echo "Tema Front ya instalado"
+  xdg-open https://github.com/biko2/front
 fi
 
 
