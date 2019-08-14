@@ -56,7 +56,6 @@ docker-compose up -d
 docker-compose ps
 
 
-
 # Elección perfil instalación
 echo "Elige el perfil de instalación drupal:  1)Standard 2)Minimal 3)Demo"
 read n
@@ -95,7 +94,10 @@ case $t in
     1) composer require 'drupal/cog'
        cd $mypwd/$PROYECTO/web/themes
        mkdir custom
+       cd $mypwd/$PROYECTO/web/themes/custom
        git clone https://github.com/biko2/front.git $PROYECTO
+       npm install
+       cd $mypwd/$PROYECTO
        docker-compose exec web drush config-set system.theme default $PROYECTO
     ;;
     2) break
