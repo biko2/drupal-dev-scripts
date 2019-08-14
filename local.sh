@@ -11,7 +11,7 @@ echo "Introduce un nombre para el nuevo proyecto en minúsculas y sin espacios. 
 read PROYECTO
 
 # Detener todos los servicios docker
-docker stop $(docker ps -a)
+docker stop $(docker ps -a -q)
 
 # Detener conexiones virtuales no usadas
 # docker network prune
