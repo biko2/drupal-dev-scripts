@@ -96,6 +96,7 @@ case $t in
        mkdir custom
        cd $mypwd/$PROYECTO/web/themes/custom
        git clone https://github.com/biko2/front.git $PROYECTO
+       cd $mypwd/$PROYECTO/web/themes/custom/$PROYECTO
        npm install
        cd $mypwd/$PROYECTO
        docker-compose exec web drush config-set system.theme default $PROYECTO
